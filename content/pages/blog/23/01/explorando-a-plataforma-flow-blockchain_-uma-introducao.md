@@ -99,7 +99,6 @@ markdown_content_pt: >+
 metaDescription: null
 socialImage: null
 date: '2023-01-08'
-excerptBr: Unindo forças para construir o Metaverse
 featuredImage:
   type: ImageBlock
   url: /images/23/01/Animoca MotoGP e StarGirl.png
