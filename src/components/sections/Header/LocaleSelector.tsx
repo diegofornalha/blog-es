@@ -37,7 +37,6 @@ export default function LocaleSelector() {
                             ...theme.extend['sb-component-link'],
                         }}
                     >
-                        <MenuItem value={"pt"}>🇧🇷</MenuItem>
 
                     </Select>
                 </ThemeProvider>
