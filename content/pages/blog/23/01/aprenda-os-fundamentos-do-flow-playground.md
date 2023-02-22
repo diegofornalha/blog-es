@@ -74,9 +74,6 @@ markdown_content_pt: "O Flow Playground é um editor e emulador construído dire
 metaDescription: null
 socialImage: null
 date: '2023-01-09'
-excerptBr: >-
-  Como implantar um contrato e como interagir com contratos implantados usando
-  transações e scripts.
 author: content/data/team/people/diego-fornalha.json
 excerpt: >-
   Aprende a desplegar un contrato y a interactuar con contratos desplegados
