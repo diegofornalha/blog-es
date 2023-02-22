@@ -27,7 +27,7 @@ export default function MyApp({ Component, pageProps }) {
     };
 
     const prefersFR = () => {
-        navigator?.language?.toLowerCase().includes('en') || false;
+        navigator?.language?.toLowerCase().includes('pt') || false;
     };
 
     const setDark = () => {
