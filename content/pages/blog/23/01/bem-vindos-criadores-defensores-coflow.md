@@ -175,9 +175,6 @@ markdown_content_pt: >
   suas monetizações e suas conexões com sua audiência
 metaDescription: null
 socialImage: null
-excerptBr: >-
-  Descubra novas formas de monetizar e se conectar com o seu público através de
-  tecnologia descentralizada
 author: content/data/team/people/diego-fornalha.json
 title: 'Bienvenidos, Creadores, Defensores de CoFlow'
 excerpt: >-
