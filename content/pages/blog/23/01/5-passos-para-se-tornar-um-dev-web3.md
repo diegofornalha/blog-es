@@ -153,6 +153,7 @@ markdown_content_pt: >
 
   <https://twitter.com/Frlabs33/status/1609902138729144320>
 author: content/data/team/people/diego-fornalha.json
+title: 5 pasos para convertirse en un desarrollador Web3
 ---
 **¿Quieres formar parte de la revolución descentralizada como desarrollador Web3?**&#x20;
 
