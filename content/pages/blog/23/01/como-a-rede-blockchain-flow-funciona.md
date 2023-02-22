@@ -93,7 +93,6 @@ metaDescription: >-
   arquitetura de rede Flow é mais simples e menos problemática do que outras
   opções no mercado.
 socialImage: /images/23/01/Como a rede blockchain flow funciona diegofornalha.png
-excerptBr: Divisão de nós e funções no Flow
 markdown_content_pt: >+
 
   Flow é um da tecnologia blockchain projetada do início ao fim com o objetivo
