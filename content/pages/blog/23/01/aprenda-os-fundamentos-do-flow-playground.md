@@ -4,7 +4,6 @@ metaTitle: null
 addTitleSuffix: true
 metaTags: []
 title: Aprende los fundamentos de Flow Playground
-titlePt: Aprenda os fundamentos do Flow Playground
 colors: colors-d
 excerptFr: >-
   Como implantar um contrato e como interagir com contratos implantados usando
