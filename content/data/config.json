@@ -1,0 +1,166 @@
+{
+    "type": "Config",
+    "header": {
+        "headerVariant": "variant-b",
+        "isSticky": true,
+        "primaryColors": "colors-b",
+        "secondaryColors": "colors-d",
+        "isTitleVisible": false,
+        "primaryLinks": [
+            {
+                "type": "Link",
+                "label": "Início",
+                "altText": "Início",
+                "url": "/",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
+                "label": "Blog ",
+                "altText": "Blog",
+                "url": "/blog",
+                "showIcon": true,
+                "icon": "arrowRightCircle",
+                "iconPosition": "left",
+                "elementId": ""
+            }
+        ],
+        "secondaryLinks": [
+            {
+                "type": "Button",
+                "label": "Servidor no Discord",
+                "altText": "Entrar no Discord",
+                "style": "secondary",
+                "url": "https://discord.com/invite/hT8EpC5mUN",
+                "showIcon": true,
+                "icon": "cart",
+                "iconPosition": "right",
+                "elementId": ""
+            }
+        ],
+        "styles": {
+            "self": {
+                "width": "wide",
+                "padding": [
+                    "pl-5",
+                    "pt-5",
+                    "pb-5",
+                    "pr-5"
+                ]
+            }
+        },
+        "logo": {
+            "type": "ImageBlock",
+            "url": "/images/padrao/flow-coflow-logo.png",
+            "altText": "CoFlow Logo",
+            "caption": "CoFlow",
+            "width": 114,
+            "height": 48,
+            "elementId": ""
+        },
+        "title": "CoFlow"
+    },
+    "footer": {
+        "variant": "variant-b",
+        "colors": "colors-b",
+        "contacts": {
+            "addressAltText": "Our address"
+        },
+        "copyrightText": "CoFlow",
+        "primaryLinks": [
+            {
+                "type": "Link",
+                "label": "Início",
+                "url": "/",
+                "altText": "Início"
+            },
+            {
+                "type": "Link",
+                "label": "Entre em Contato",
+                "altText": "Entre em Contato",
+                "url": "https://wa.me/5521997806363?text=Ol%C3%A1",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
+            }
+        ],
+        "socialLinks": [
+            {
+                "type": "Social",
+                "label": "Email",
+                "altText": "",
+                "url": "mailto:diegofornalha@gmail.com",
+                "icon": "mail",
+                "style": "link",
+                "elementId": ""
+            },
+            {
+                "type": "Social",
+                "altText": "Instagram",
+                "label": "Instagram",
+                "url": "http://www.instagram.com/diegofornalha",
+                "icon": "instagram"
+            },
+            {
+                "type": "Social",
+                "altText": "Linkedin",
+                "label": "Linkedin",
+                "url": "https://www.github.com/diegofornalha",
+                "icon": "github"
+            },
+            {
+                "type": "Social",
+                "label": "Youtube",
+                "altText": "Youtube",
+                "icon": "youtube",
+                "style": "link",
+                "elementId": "",
+                "url": "https://www.youtube.com/diegofornalha"
+            },
+            {
+                "type": "Social",
+                "altText": "Twitter",
+                "label": "Twitter",
+                "url": "https://twitter.com/diegofornalha",
+                "icon": "twitter"
+            },
+            {
+                "type": "Social",
+                "label": "Linkedin",
+                "altText": "Linkedin",
+                "url": "https://linkedin.com/in/diegofornalha",
+                "icon": "linkedin",
+                "style": "link",
+                "elementId": ""
+            }
+        ],
+        "styles": {
+            "self": {
+                "width": "narrow"
+            }
+        },
+        "logo": {
+            "type": "ImageBlock",
+            "url": "/images/padrao/flow-coflow-logo.png",
+            "altText": "CoFlow Logo",
+            "caption": "CoFlow Logo",
+            "width": 114,
+            "height": 48,
+            "elementId": ""
+        }
+    },
+    "defaultMetaTags": [
+        {
+            "type": "MetaTag",
+            "property": "og:title",
+            "content": "CoFlow"
+        }
+    ],
+    "titleSuffix": "Coflow",
+    "favicon": "/images/padrao/flow-coflow-logo.png",
+    "defaultSocialImage": "/images/padrao/flow-coflow-logo.png"
+}

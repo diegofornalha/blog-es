@@ -1,0 +1,112 @@
+name: PostLayout
+label: Post
+layout: PostLayout
+thumbnail: 
+extends:
+  - Seo
+fieldGroups:
+  - name: styles
+    label: Styles
+fields:
+  - type: string
+    name: title
+    label: Title [ES]
+    default: 
+    required: true
+  - type: string
+    name: titlePt
+    label: Title [BR]
+    default: 
+    required: true
+  - type: enum
+    name: colors
+    label: Colors
+    group: styles
+    controlType: palette
+    options:
+      - label: Colors A
+        value: colors-a
+        textColor: '$onLight'
+        backgroundColor: '$light'
+        borderColor: '#ececec'
+      - label: Colors B
+        value: colors-b
+        textColor: '$onDark'
+        backgroundColor: '$dark'
+        borderColor: '#ececec'
+      - label: Colors C
+        value: colors-c
+        textColor: '$onSecondary'
+        backgroundColor: '$secondary'
+        borderColor: '#ececec'
+      - label: Colors D
+        value: colors-d
+        textColor: '$onComplementary'
+        backgroundColor: '$complementary'
+        borderColor: '#ececec'
+      - label: Colors E
+        value: colors-e
+        textColor: '$onComplementaryAlt'
+        backgroundColor: '$complementaryAlt'
+        borderColor: '#ececec'
+    default: colors-d
+  - type: date
+    name: date
+    label: Date
+    required: true
+  - type: reference
+    name: author
+    label: Author
+    models:
+      - Person
+  - type: string
+    name: excerpt
+    label: Excerpt [ES]
+    default: 
+  - type: string
+    name: excerptBr
+    label: Excerpt [BR]
+    default: 
+  - type: model
+    name: featuredImage
+    label: Featured image
+    models:
+      - ImageBlock
+    default:
+      type: ImageBlock
+      url: 
+      altText: Post thumbnail image
+      caption: ''
+  - type: model
+    name: media
+    label: Media
+    models:
+      - ImageBlock
+      - VideoBlock
+    default:
+      type: ImageBlock
+      url: 
+      altText: Post image
+  - type: list
+    name: bottomSections
+    label: Sections
+    items:
+      type: model
+      groups:
+        - sectionComponent
+  - type: markdown
+    name: markdown_content_pt
+    label: Content [BR]
+    default: ''
+  - type: string
+    name: metaDescription
+    label: 'Description tag (default: excerpt)'
+    description: ''
+    default: null
+    group: seo
+  - type: image
+    name: socialImage
+    label: 'Image for social (default:  featured image)'
+    description: ''
+    default: null
+    group: seo
