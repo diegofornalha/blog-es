@@ -4,16 +4,6 @@ metaTitle: 5 passos para se tornar um dev Web3
 addTitleSuffix: true
 metaTags: []
 colors: colors-d
-excerpt: >-
-  Web3 es la próxima generación de la web, descentralizada y basada en
-  blockchain. Para convertirse en un desarrollador Web3 exitoso, es importante
-  dominar los fundamentos del desarrollo web, comprender la tecnología
-  blockchain y los protocolos Web3, tener una buena comprensión de los contratos
-  inteligentes y de Cadence, especializarse en un aspecto particular del
-  desarrollo Web3 o en un uso específico, y mantenerse actualizado sobre las
-  últimas tendencias y tecnologías. Mantenerse actualizado y especializado le
-  permitirá aprovechar al máximo las oportunidades en este campo de rápido
-  crecimiento.
 featuredImage:
   type: ImageBlock
   url: /images/23/01/5 passos para se tornar um dev Web3 DiegoFornalha.png
