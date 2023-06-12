@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { DisplayModeContext } from '../context/displayMode';
 import { I18NContext } from '../context/i18Ncontext';
-import { WalletContext } from '../context/WalletContext'; // Import WalletContext
+import { WalletProvider } from '../context/WalletContext'; // Import WalletProvider
 import { translatedLinks } from '../../content/translations/links';
 import { translatedRoles } from '../../content/translations/roles';
 import '../css/main.css';
@@ -11,14 +11,6 @@ export default function MyApp({ Component, pageProps }) {
     const [locale, setLocale] = React.useState('en');
     const [displayMode, setDisplayMode] = React.useState('light');
     const [linksTranslations] = React.useState(translatedLinks);
-
-    // Novo estado e função para gerenciar a conexão com a carteira
-    const [isConnected, setIsConnected] = useState(false);
-    const connect = () => {
-        // Aqui você pode adicionar a lógica para conectar com a carteira do usuário
-        console.log('Connect button clicked');
-        setIsConnected(true);
-    };
 
     function translateLink(input) {
         if (input in linksTranslations) return locale === 'pt' ? linksTranslations[input] : input;
@@ -72,12 +64,11 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <I18NContext.Provider value={{ locale, setLanguage, translateLink, translateRole }}>
             <DisplayModeContext.Provider value={{ displayMode, setDark, setLight }}>
-                <WalletContext.Provider value={{ isConnected, connect }}>
-                    {' '}
-                    {/* Use WalletContext */}
+                <WalletProvider>
+                    {/* Use WalletProvider */}
                     <Component {...pageProps} />
                     <Analytics />
-                </WalletContext.Provider>
+                </WalletProvider>
             </DisplayModeContext.Provider>
         </I18NContext.Provider>
     );
