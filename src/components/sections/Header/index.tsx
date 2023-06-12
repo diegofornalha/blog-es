@@ -10,6 +10,7 @@ import MenuIcon from '../../svgs/menu';
 import DropdownLink from './DropdownLink';
 import LocaleSelector from './LocaleSelector';
 import ModeSwitcher from './ModeSwitcher';
+import ConnectButton from './ConnectButton'; // Import ConnectButton
 import { DisplayModeContext } from '../../../context/displayMode';
 import { getMatchingColor } from '../../../utils/themeColorMapper';
 import Image from 'next/image';
@@ -141,7 +142,6 @@ function MobileMenu(props) {
             router.events.off('routeChangeStart', handleRouteChange);
         };
     }, [router.events]);
-
     return (
         <div className="ml-auto lg:hidden">
             <button aria-label="Open Menu" className="p-2 -mr-1 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
