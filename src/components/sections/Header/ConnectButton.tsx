@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { WalletContext } from '../../../context/WalletContext';
 
 const ConnectButton = () => {
+    const { isConnected, connect } = useContext(WalletContext); // Use WalletContext
+
     const handleConnect = () => {
-        // Aqui você pode adicionar a lógica para conectar com a carteira do usuário
-        console.log('Connect button clicked');
+        connect();
     };
 
     return (
         <button onClick={handleConnect} className="btn-connect">
-            Conectar
+            {isConnected ? 'Desconectar' : 'Conectar'}
         </button>
     );
 };
