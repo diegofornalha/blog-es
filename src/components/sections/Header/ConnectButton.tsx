@@ -1,18 +1,10 @@
-import React, { useContext } from 'react';
-import { WalletContext } from '../../../context/WalletContext';
+import React from 'react';
+import { useWallet } from '../../../context/WalletContext';
 
 const ConnectButton = () => {
-    const { isConnected, connect } = useContext(WalletContext); // Use WalletContext
+    const authCluster = useWallet();
 
-    const handleConnect = () => {
-        connect();
-    };
-
-    return (
-        <button onClick={handleConnect} className="btn-connect">
-            {isConnected ? 'Desconectar' : 'Conectar'}
-        </button>
-    );
+    return <div>{authCluster}</div>;
 };
 
 export default ConnectButton;
