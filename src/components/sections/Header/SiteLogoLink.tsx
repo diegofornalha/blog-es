@@ -1,6 +1,8 @@
 import * as React from 'react';
 import ImageBlock from '../../molecules/ImageBlock';
 import { Link } from '../../atoms';
+import classNames from 'classnames';
+
 
 export default function SiteLogoLink({ title, isTitleVisible, logo }) {
     if (!(logo || (title && isTitleVisible))) {

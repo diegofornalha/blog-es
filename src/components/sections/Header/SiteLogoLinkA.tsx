@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
+import classNames from 'classnames';
 
 const SiteLogoLinkA = ({ title, isTitleVisible, logo }) => {
     if (!(logo || (title && isTitleVisible))) {

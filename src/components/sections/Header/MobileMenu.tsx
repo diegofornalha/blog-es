@@ -10,6 +10,7 @@ import LocaleSelector from './LocaleSelector';
 import ModeSwitcher from './ModeSwitcher';
 import ListOfLinks from './ListOfLinks';
 import ConnectButton from './ConnectButton';
+import classNames from 'classnames';
 
 export default function MobileMenu(props) {
     const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [], secondaryColors = 'colors-d' } = props;
