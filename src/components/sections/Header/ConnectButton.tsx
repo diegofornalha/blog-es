@@ -2,12 +2,13 @@ import React from 'react';
 import { useWallet } from '../../../context/WalletContext';
 
 const ConnectButton = () => {
+    const { openModal } = useWallet(); // Importe o hook useWallet e extraia o método openModal
+
     const handleConnect = () => {
-        // Aqui você pode adicionar a lógica para conectar com a carteira do usuário
-        console.log('Connect button clicked');
+        openModal(); // Chame openModal quando o botão for clicado
     };
 
-    console.log('Rendering ConnectButton'); // Adicione este log
+    console.log('Rendering ConnectButton');
 
     return (
         <button onClick={handleConnect} className="btn-connect">
