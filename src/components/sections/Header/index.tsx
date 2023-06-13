@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import WalletModal from './WalletModal';
-
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import CloseIcon from '../../svgs/close';
@@ -53,32 +52,30 @@ function HeaderVariants(props) {
         default:
             return null;
     }
-}
-
-
-function HeaderVariantA(props) {
-    const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [] } = props;
-    return (
-      <div className="flex items-center relative">
-        <SiteLogoLink title={title} isTitleVisible={isTitleVisible} logo={logo} />
-        {LocaleSelector()}
-        {primaryLinks.length > 0 && (
-          <ul className="hidden lg:flex lg:items-center mr-8 space-x-8" data-sb-field-path=".primaryLinks">
-            <ListOfLinks links={primaryLinks} inMobileMenu={false} />
-          </ul>
-        )}
-        {secondaryLinks.length > 0 && (
-          <ul className="hidden lg:flex lg:items-center ml-auto space-x-8" data-sb-field-path=".secondaryLinks">
-            <ListOfLinks links={secondaryLinks} inMobileMenu={false} />
-            <ModeSwitcher />
-          </ul>
-        )}
-        <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
-        {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
-        <WalletModal /> {/* Adicione o componente WalletModal aqui */}
-      </div>
-    );
-   }
+    
+    function HeaderVariantA(props) {
+        const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [] } = props;
+        return (
+            <div className="flex items-center relative">
+                <SiteLogoLink title={title} isTitleVisible={isTitleVisible} logo={logo} />
+                {LocaleSelector()}
+                {primaryLinks.length > 0 && (
+                    <ul className="hidden lg:flex lg:items-center mr-8 space-x-8" data-sb-field-path=".primaryLinks">
+                        <ListOfLinks links={primaryLinks} inMobileMenu={false} />
+                    </ul>
+                )}
+                {secondaryLinks.length > 0 && (
+                    <ul className="hidden lg:flex lg:items-center ml-auto space-x-8" data-sb-field-path=".secondaryLinks">
+                        <ListOfLinks links={secondaryLinks} inMobileMenu={false} />
+                        <ModeSwitcher />
+                    </ul>
+                )}
+                <ConnectButton onConnect={handleOpenModal} /> {/* Modify this line */}
+                {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
+            </div>
+        );
+    }
+    
 
 function HeaderVariantB(props) {
     const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [] } = props;
