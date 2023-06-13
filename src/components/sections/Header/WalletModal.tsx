@@ -25,9 +25,9 @@ const WalletModal = () => {
 
   return (
     <div>
-      <button onClick={handleConnect}>Connect to Flow Wallet</button>
-      {user && <p>Connected to: {user}</p>}
-      <button onClick={disconnectWallet}>Disconnect Wallet</button>
+      <button onClick={handleConnect}></button>
+      {user && <p>{user}</p>}
+      <button onClick={disconnectWallet}></button>
     </div>
   );
 };
