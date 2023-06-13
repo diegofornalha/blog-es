@@ -8,7 +8,7 @@ export default function ListOfLinks({ links, inMobileMenu }) {
             {link.dropdownLinks ? (
                 <DropdownLink {...link} inMobileMenu={inMobileMenu} data-sb-field-path={`.${index}`} />
             ) : (
-                <Action {...link} className={classNames(inMobileMenu && link.type === 'Button' ? 'w-full' : '')} data-sb-field-path={`.${index}`} />
+                <Action {...link} className={inMobileMenu && link.type === 'Button' ? 'w-full' : ''} data-sb-field-path={`.${index}`} />
             )}
         </li>
     ));
