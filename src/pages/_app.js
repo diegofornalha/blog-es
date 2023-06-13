@@ -6,6 +6,7 @@ import { translatedLinks } from '../../content/translations/links';
 import { translatedRoles } from '../../content/translations/roles';
 import '../css/main.css';
 import Analytics from '../components/Analytics';
+import { FCLProvider } from '@onflow/fcl-react'; // Import FCLProvider
 
 export default function MyApp({ Component, pageProps }) {
     const [locale, setLocale] = React.useState('en');
@@ -64,12 +65,12 @@ export default function MyApp({ Component, pageProps }) {
     return (
         <I18NContext.Provider value={{ locale, setLanguage, translateLink, translateRole }}>
             <DisplayModeContext.Provider value={{ displayMode, setDark, setLight }}>
-                <WalletProvider>
-                    {' '}
-                    {/* Use WalletProvider here */}
-                    <Component {...pageProps} />
-                    <Analytics />
-                </WalletProvider>
+                <FCLProvider>
+                    <WalletProvider>
+                        <Component {...pageProps} />
+                        <Analytics />
+                    </WalletProvider>
+                </FCLProvider>
             </DisplayModeContext.Provider>
         </I18NContext.Provider>
     );
