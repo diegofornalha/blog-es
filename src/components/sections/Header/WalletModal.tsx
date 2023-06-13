@@ -1,42 +1,33 @@
-import React, { useState } from 'react';
 import * as fcl from "@onflow/fcl";
+import { useState } from "react";
 
 const WalletModal = () => {
-    const [authStatus, setAuthStatus] = useState("not connected");
+    const [user, setUser] = useState(null);
 
     const handleConnect = async () => {
-        setAuthStatus("connecting");
         try {
             await fcl.authenticate();
-            setAuthStatus("connected");
+            const { addr } = await fcl.currentUser().snapshot();
+            setUser(addr);
         } catch (error) {
             console.error("Failed to connect to wallet", error);
-            setAuthStatus("not connected");
         }
     };
 
-    const handleDisconnect = async () => {
+    const disconnectWallet = async () => {
         try {
             await fcl.unauthenticate();
-            setAuthStatus("not connected");
+            setUser(null);
         } catch (error) {
             console.error("Failed to disconnect from wallet", error);
         }
     };
 
-    const buttonText = {
-        "not connected": "Connect to Flow Wallet",
-        "connecting": "Connecting...",
-        "connected": "Disconnect"
-    }[authStatus];
-
     return (
         <div>
-            {authStatus !== "connected" ? (
-                <button onClick={handleConnect}>{buttonText}</button>
-            ) : (
-                <button onClick={handleDisconnect}>{buttonText}</button>
-            )}
+            <button onClick={handleConnect}>Connect to Flow Wallet</button>
+            {user && <p>Connected to: {user}</p>}
+            <button onClick={disconnectWallet}>Disconnect Wallet</button>
         </div>
     );
 };
