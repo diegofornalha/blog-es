@@ -1,15 +1,41 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import * as fcl from '@onflow/fcl';
 
-const WalletContext = createContext({});
+const WalletContext = createContext(null);
 
-export function WalletProvider({ children }) {
+export const WalletProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = fcl.currentUser().subscribe(user => setUser({ ...user }));
+        return () => unsubscribe();
+    }, []);
+
+    const logIn = () => {
+        fcl.logIn();
+    };
+
+    const logOut = () => {
+        fcl.unauthenticate();
+    };
+
     return (
-        <WalletContext.Provider value={'test'}>
-            {children}S
+        <WalletContext.Provider
+            value={{
+                user,
+                logIn,
+                logOut,
+            }}
+        >
+            {children}
         </WalletContext.Provider>
     );
-}
+};
 
-export function useWallet() {
-    return useContext(WalletContext);
-}
+export const useWallet = () => {
+    const context = useContext(WalletContext);
+    if (context === undefined) {
+        throw new Error('useWallet must be used within a WalletProvider');
+    }
+    return context;
+};

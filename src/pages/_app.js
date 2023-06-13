@@ -65,7 +65,8 @@ export default function MyApp({ Component, pageProps }) {
         <I18NContext.Provider value={{ locale, setLanguage, translateLink, translateRole }}>
             <DisplayModeContext.Provider value={{ displayMode, setDark, setLight }}>
                 <WalletProvider>
-                    {/* Use WalletProvider */}
+                    {' '}
+                    {/* Use WalletProvider here */}
                     <Component {...pageProps} />
                     <Analytics />
                 </WalletProvider>
