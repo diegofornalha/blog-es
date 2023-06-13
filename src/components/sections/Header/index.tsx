@@ -1,24 +1,13 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import classNames from 'classnames';
-import WalletModal from './WalletModal';
-
-import { Link, Action } from '../../atoms';
+import { Link } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
-import CloseIcon from '../../svgs/close';
-import MenuIcon from '../../svgs/menu';
-import DropdownLink from './DropdownLink';
-import LocaleSelector from './LocaleSelector';
-import ModeSwitcher from './ModeSwitcher';
-import ConnectButton from './ConnectButton'; // Import ConnectButton
 import { DisplayModeContext } from '../../../context/displayMode';
 import { getMatchingColor } from '../../../utils/themeColorMapper';
 import Image from 'next/image';
-
-import HeaderVariantA from './HeaderVariantA'; // Import HeaderVariantA
-import HeaderVariantB from './HeaderVariantB'; // Import HeaderVariantB
-import HeaderVariantC from './HeaderVariantC'; // Import HeaderVariantC
+import HeaderVariantA from './HeaderVariantA';
+import HeaderVariantB from './HeaderVariantB';
+import HeaderVariantC from './HeaderVariantC';
 
 export default function Header(props) {
     const { isSticky, primaryColors = 'colors-d', styles = {}, annotationPrefix, ...rest } = props;
