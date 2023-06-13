@@ -1,18 +1,25 @@
-import React from 'react';
-import { useWallet } from '../../../context/WalletContext';
+import * as React from 'react';
+import { useCurrentUser } from "@onflow/fcl";
 
 const ConnectButton = () => {
-    const { openModal } = useWallet(); // Importe o hook useWallet e extraia o método openModal
+    const [user, setUser] = React.useState(null);
+    const currentUser = useCurrentUser();
+
+    React.useEffect(() => {
+        setUser(currentUser);
+    }, [currentUser]);
 
     const handleConnect = () => {
-        openModal(); // Chame openModal quando o botão for clicado
+        if (user?.loggedIn) {
+            window.location.href = "/profile";
+        } else {
+            window.location.href = "/connect";
+        }
     };
 
-    console.log('Rendering ConnectButton');
-
     return (
-        <button onClick={handleConnect} className="btn-connect">
-            Conectar
+        <button onClick={handleConnect}>
+            {user?.loggedIn ? "Profile" : "Connect"}
         </button>
     );
 };
