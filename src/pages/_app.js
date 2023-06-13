@@ -41,6 +41,7 @@ export default function MyApp({ Component, pageProps }) {
         localStorage.setItem('displayMode', 'light');
         setDisplayMode('light');
     };
+
     const prefersDark = () => {
         const mediaQuery = window?.matchMedia('(prefers-color-scheme: dark)');
         return mediaQuery?.matches || false;
