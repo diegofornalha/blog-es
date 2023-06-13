@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { DisplayModeContext } from '../../../context/displayMode';
+import { getMatchingColor } from '../../../utils/themeColorMapper';
 import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
-import { getMatchingColor } from '../../../utils/themeColorMapper';
-import { DisplayModeContext } from '../../../context/displayMode';
 import ListOfLinks from './ListOfLinks';
 import ConnectButton from './ConnectButton';
-import WalletModal from './WalletModal';
 
 export default function MobileMenu(props) {
-    const { primaryLinks = [], secondaryLinks = [], secondaryColors = 'colors-d' } = props;
+    const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [], secondaryColors = 'colors-d' } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
     const { displayMode } = React.useContext(DisplayModeContext);
@@ -46,6 +45,8 @@ export default function MobileMenu(props) {
             >
                 <div className="flex flex-col min-h-full">
                     <div className="flex items-center justify-between mb-10">
+                        <SiteLogoLink title={title} isTitleVisible={isTitleVisible} logo={logo} />
+                        {LocaleSelector()}
                         <button aria-label="Close Menu" className="p-2 -mr-1 focus:outline-none" onClick={() => setIsMenuOpen(false)}>
                             <CloseIcon className="fill-current h-6 w-6" />
                         </button>
@@ -58,10 +59,10 @@ export default function MobileMenu(props) {
                     {secondaryLinks.length > 0 && (
                         <ul className="mb-10 space-y-5" data-sb-field-path=".secondaryLinks">
                             <ListOfLinks links={secondaryLinks} inMobileMenu={true} />
+                            <ModeSwitcher />
                         </ul>
                     )}
                     <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
-                    <WalletModal /> {/* Adicione o componente WalletModal aqui */}
                 </div>
             </div>
         </div>
