@@ -1,13 +1,15 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Link } from '../../atoms';
+import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import { DisplayModeContext } from '../../../context/displayMode';
 import { getMatchingColor } from '../../../utils/themeColorMapper';
 import Image from 'next/image';
+
 import HeaderVariantA from './HeaderVariantA';
 import HeaderVariantB from './HeaderVariantB';
 import HeaderVariantC from './HeaderVariantC';
+import MobileMenu from './MobileMenu';
 
 export default function Header(props) {
     const { isSticky, primaryColors = 'colors-d', styles = {}, annotationPrefix, ...rest } = props;
