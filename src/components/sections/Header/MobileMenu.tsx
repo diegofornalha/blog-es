@@ -5,8 +5,10 @@ import { DisplayModeContext } from '../../../context/displayMode';
 import { getMatchingColor } from '../../../utils/themeColorMapper';
 import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
-import ListOfLinks from './ListOfLinks';
+import SiteLogoLink from './SiteLogoLink';
+import LocaleSelector from './LocaleSelector';
 import ModeSwitcher from './ModeSwitcher';
+import ListOfLinks from './ListOfLinks';
 import ConnectButton from './ConnectButton';
 
 export default function MobileMenu(props) {
