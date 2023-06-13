@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
+import WalletModal from './WalletModal';
 
 import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
@@ -74,6 +75,7 @@ function HeaderVariantA(props) {
         )}
         <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
         {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
+        <WalletModal /> {/* Adicione o componente WalletModal aqui */}
       </div>
     );
    }
