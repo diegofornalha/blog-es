@@ -1,13 +1,17 @@
-import * as React from 'react';
-import { useCurrentUser } from "@onflow/fcl";
+import React, { useEffect, useState } from 'react';
+import * as fcl from '@onflow/fcl';
 
 const ConnectButton = () => {
-    const [user, setUser] = React.useState(null);
-    const currentUser = useCurrentUser();
+    const [user, setUser] = useState(null);
 
-    React.useEffect(() => {
-        setUser(currentUser);
-    }, [currentUser]);
+    useEffect(() => {
+        let unSub;
+        fcl.currentUser().subscribe((usr) => {
+            setUser(usr);
+            unSub = usr;
+        });
+        return () => unSub && unSub.unsubscribe(); // Unsubscribe on unmount
+    }, []);
 
     const handleConnect = () => {
         if (user?.loggedIn) {
