@@ -31,8 +31,8 @@ export default function HeaderVariantA(props) {
                     <ModeSwitcher />
                 </ul>
             )}
-            <ConnectButton onClick={handleConnect} /> {/* Adicione o manipulador de clique aqui */}
-            <WalletModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /> {/* Adicione as props isOpen e onClose aqui */}
+            <ConnectButton />
+            <WalletModal /> 
         </div>
     );
 }
