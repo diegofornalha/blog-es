@@ -6,6 +6,7 @@ import { getMatchingColor } from '../../../utils/themeColorMapper';
 import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
 import ListOfLinks from './ListOfLinks';
+import ModeSwitcher from './ModeSwitcher';
 import ConnectButton from './ConnectButton';
 
 export default function MobileMenu(props) {
