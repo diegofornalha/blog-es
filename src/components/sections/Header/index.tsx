@@ -11,15 +11,14 @@ import MenuIcon from '../../svgs/menu';
 import DropdownLink from './DropdownLink';
 import LocaleSelector from './LocaleSelector';
 import ModeSwitcher from './ModeSwitcher';
-import ConnectButton from './ConnectButton';
+import ConnectButton from './ConnectButton'; // Import ConnectButton
 import { DisplayModeContext } from '../../../context/displayMode';
 import { getMatchingColor } from '../../../utils/themeColorMapper';
 import Image from 'next/image';
 
-// Import the new components
-import HeaderVariantA from './HeaderVariantA';
-import HeaderVariantB from './HeaderVariantB';
-import HeaderVariantC from './HeaderVariantC';
+import HeaderVariantA from './HeaderVariantA'; // Import HeaderVariantA
+import HeaderVariantB from './HeaderVariantB'; // Import HeaderVariantB
+import HeaderVariantC from './HeaderVariantC'; // Import HeaderVariantC
 
 export default function Header(props) {
     const { isSticky, primaryColors = 'colors-d', styles = {}, annotationPrefix, ...rest } = props;
@@ -60,4 +59,15 @@ function HeaderVariants(props) {
     }
 }
 
-// Rest of the code...
+function mapHeaderMaxWidthStyles(width) {
+    switch (width) {
+        case 'narrow':
+            return 'max-w-7xl';
+        case 'wide':
+            return 'max-w-screen-2xl';
+        case 'full':
+            return 'max-w-full';
+        default:
+            return null;
+    }
+}
