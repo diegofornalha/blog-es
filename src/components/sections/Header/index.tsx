@@ -71,6 +71,7 @@ function HeaderVariantA(props) {
                     <ModeSwitcher />
                 </ul>
             )}
+            <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
@@ -96,6 +97,7 @@ function HeaderVariantB(props) {
                     <ModeSwitcher />
                 </ul>
             )}
+            <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
@@ -121,6 +123,7 @@ function HeaderVariantC(props) {
                     <ModeSwitcher />
                 </ul>
             )}
+            <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
@@ -159,7 +162,7 @@ function MobileMenu(props) {
                     'overflow-y-auto',
                     'z-20',
                     isMenuOpen ? 'block' : 'hidden'
-                )}
+               )}
             >
                 <div className="flex flex-col min-h-full">
                     <div className="flex items-center justify-between mb-10">
@@ -180,6 +183,7 @@ function MobileMenu(props) {
                             <ModeSwitcher />
                         </ul>
                     )}
+                    <ConnectButton /> {/* Adicione o botão ConnectButton aqui */}
                 </div>
             </div>
         </div>
