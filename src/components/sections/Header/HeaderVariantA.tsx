@@ -6,6 +6,7 @@ import LocaleSelector from './LocaleSelector';
 import ModeSwitcher from './ModeSwitcher';
 import ConnectButton from './ConnectButton';
 import WalletModal from './WalletModal';
+import classNames from 'classnames';
 
 export default function HeaderVariantA(props) {
     const { title, isTitleVisible, logo, primaryLinks = [], secondaryLinks = [] } = props;
